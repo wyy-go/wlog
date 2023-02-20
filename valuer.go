@@ -3,9 +3,6 @@ package wlog
 import (
 	"context"
 	"fmt"
-	"runtime"
-	"strconv"
-	"strings"
 	"time"
 
 	"go.uber.org/zap"
@@ -508,36 +505,6 @@ func ImmutAny(key string, v any) Valuer {
 }
 
 /**************************** helper ******************************************/
-func caller(depth int) (file string, line int) {
-	d := depth
-	_, file, line, _ = runtime.Caller(d)
-	if strings.LastIndex(file, "/logger.go") > 0 {
-		d++
-		_, file, line, _ = runtime.Caller(d)
-	}
-	if strings.LastIndex(file, "/default.go") > 0 {
-		d++
-		_, file, line, _ = runtime.Caller(d)
-	}
-	return file, line
-}
-
-// Caller returns a Valuer that returns a pkg/file:line description of the caller.
-func Caller(depth int) Valuer {
-	return func(context.Context) Field {
-		file, line := caller(depth)
-		idx := strings.LastIndexByte(file, '/')
-		return zap.String("caller", file[idx+1:]+":"+strconv.Itoa(line))
-	}
-}
-
-// File returns a Valuer that returns a pkg/file:line description of the caller.
-func File(depth int) Valuer {
-	return func(context.Context) Field {
-		file, line := caller(depth)
-		return zap.String("file", file+":"+strconv.Itoa(line))
-	}
-}
 
 // Package returns a Valuer that returns an immutable Valuer which key is pkg
 func Package(v string) Valuer {

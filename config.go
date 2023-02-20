@@ -85,11 +85,6 @@ func WithAddCaller(b bool) Option {
 	return func(c *Config) { c.AddCaller = b }
 }
 
-// WithCallerSkip when AddCaller enabled
-func WithCallerSkip(skip int) Option {
-	return func(c *Config) { c.CallerSkip = skip }
-}
-
 // WithPath with path
 // 日志保存路径, 默认 empty, 即当前路径
 func WithPath(path string) Option {

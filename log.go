@@ -6,6 +6,8 @@ import (
 	"go.uber.org/zap/zapcore"
 	"os"
 	"path/filepath"
+	"runtime"
+	"strconv"
 	"strings"
 )
 
@@ -53,7 +55,7 @@ func toEncoder(c *Config, level zap.AtomicLevel) zapcore.Encoder {
 		LineEnding:     zapcore.DefaultLineEnding,
 		EncodeTime:     zapcore.TimeEncoderOfLayout(timeLoyout),
 		EncodeDuration: zapcore.StringDurationEncoder,
-		EncodeCaller:   zapcore.ShortCallerEncoder,
+		EncodeCaller:   customCaller, //zapcore.ShortCallerEncoder,
 		EncodeLevel:    zapcore.LowercaseLevelEncoder,
 		//MessageKey:     "msg",
 	}
@@ -65,6 +67,45 @@ func toEncoder(c *Config, level zap.AtomicLevel) zapcore.Encoder {
 		return zapcore.NewConsoleEncoder(*encoderConfig)
 	}
 	return zapcore.NewJSONEncoder(*encoderConfig)
+}
+
+func customCaller(_ zapcore.EntryCaller, enc zapcore.PrimitiveArrayEncoder) {
+	var shortPath string
+	file, line := caller(7)
+
+	idx := strings.LastIndexByte(file, '/')
+	if idx == -1 {
+		shortPath = file
+	}
+
+	if idx > 0 {
+		// Find the penultimate separator.
+		idx = strings.LastIndexByte(file[:idx], '/')
+		if idx == -1 {
+			shortPath = file
+		}
+	}
+
+	if idx > 0 {
+		shortPath = file[idx+1:]
+	}
+
+	shortPath = shortPath + ":" + strconv.Itoa(line)
+	enc.AppendString(shortPath)
+}
+
+func caller(depth int) (file string, line int) {
+	d := depth
+	_, file, line, _ = runtime.Caller(d)
+	if strings.LastIndex(file, "/logger.go") > 0 {
+		d++
+		_, file, line, _ = runtime.Caller(d)
+	}
+	if strings.LastIndex(file, "/default.go") > 0 {
+		d++
+		_, file, line, _ = runtime.Caller(d)
+	}
+	return file, line
 }
 
 func toEncodeLevel(l string) zapcore.LevelEncoder {

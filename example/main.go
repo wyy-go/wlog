@@ -14,7 +14,6 @@ func main() {
 		wlog.WithAdapter("file-custom", os.Stderr),
 		wlog.WithPath(""),
 		wlog.WithAddCaller(true),
-		wlog.WithCallerSkip(0),
 
 		wlog.WithFilename("log.log"),
 		wlog.WithMaxSize(100),
@@ -25,7 +24,6 @@ func main() {
 	)
 	wlog.ReplaceGlobals(wlog.NewLoggerWith(l, lvl).Named("project"))
 	wlog.SetDefaultValuer(
-		wlog.Caller(3),
 		wlog.ImmutString("field_fn_key1", "field_fn_value1"),
 	)
 
