@@ -3,7 +3,6 @@
 [![GoDoc](https://godoc.org/github.com/wyy-go/wlog?status.svg)](https://godoc.org/github.com/wyy-go/wlog)
 [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/wyy-go/wlog?tab=doc)
 [![codecov](https://codecov.io/gh/wyy-go/wlog/branch/main/graph/badge.svg)](https://codecov.io/gh/wyy-go/wlog)
-[![Tests](https://github.com/wyy-go/wlog/actions/workflows/ci.yml/badge.svg)](https://github.com/wyy-go/wlog/actions/workflows/ci.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/wyy-go/wlog)](https://goreportcard.com/report/github.com/wyy-go/wlog)
 [![Licence](https://img.shields.io/github/license/wyy-go/wlog)](https://raw.githubusercontent.com/wyy-go/wlog/main/LICENSE)
 [![Tag](https://img.shields.io/github/v/tag/wyy-go/wlog)](https://github.com/wyy-go/wlog/tags)
