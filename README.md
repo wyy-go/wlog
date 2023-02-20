@@ -124,13 +124,13 @@ func shouPanic(f func()) {
 
 Output:
 ```shell
-2023-02-21 00:15:36.709	project	wlog/logger.go:149	{"msg": "Debug", "caller": "main.go:32", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.761	project	wlog/logger.go:149	{"msg": "Debug-111111-1", "caller": "main.go:33", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.761	project	wlog/logger.go:157	{"msg": "Info", "caller": "main.go:34", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.761	project	wlog/logger.go:165	{"msg": "Warn", "caller": "main.go:35", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.761	project	wlog/logger.go:157	{"msg": "info", "caller": "main.go:36", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.761	project	wlog/logger.go:173	{"msg": "Error", "caller": "main.go:37", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.772	project	wlog/logger.go:182	{"msg": "DPanic", "caller": "main.go:38", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.924	debug	project	wlog/logger.go:149	{"msg": "Debug", "caller": "main.go:32", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.971	debug	project	wlog/logger.go:149	{"msg": "Debug-111111-1", "caller": "main.go:33", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.971	info	project	wlog/logger.go:157	{"msg": "Info", "caller": "main.go:34", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.972	warn	project	wlog/logger.go:165	{"msg": "Warn", "caller": "main.go:35", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.972	info	project	wlog/logger.go:157	{"msg": "info", "caller": "main.go:36", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.972	error	project	wlog/logger.go:173	{"msg": "Error", "caller": "main.go:37", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.972	dpanic	project	wlog/logger.go:182	{"msg": "DPanic", "caller": "main.go:38", "field_fn_key1": "field_fn_value1"}
 github.com/wyy-go/wlog.(*Log).DPanic
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/logger.go:182
 github.com/wyy-go/wlog.DPanic
@@ -139,12 +139,12 @@ main.main
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/example/main.go:38
 runtime.main
 	D:/gvm/go/src/runtime/proc.go:250
-2023-02-21 00:15:36.773	project	wlog/logger.go:206	{"msg": "Debugf: debug", "caller": "main.go:40", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.773	project	wlog/logger.go:214	{"msg": "Infof: info", "caller": "main.go:41", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.773	project	wlog/logger.go:222	{"msg": "Warnf: warn", "caller": "main.go:42", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.773	project	wlog/logger.go:214	{"msg": "Infof: info", "caller": "main.go:43", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.773	project	wlog/logger.go:230	{"msg": "Errorf: error", "caller": "main.go:44", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.773	project	wlog/logger.go:239	{"msg": "DPanicf: dPanic", "caller": "main.go:45", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.973	debug	project	wlog/logger.go:206	{"msg": "Debugf: debug", "caller": "main.go:40", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.973	info	project	wlog/logger.go:214	{"msg": "Infof: info", "caller": "main.go:41", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.973	warn	project	wlog/logger.go:222	{"msg": "Warnf: warn", "caller": "main.go:42", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.973	info	project	wlog/logger.go:214	{"msg": "Infof: info", "caller": "main.go:43", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.974	error	project	wlog/logger.go:230	{"msg": "Errorf: error", "caller": "main.go:44", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.974	dpanic	project	wlog/logger.go:239	{"msg": "DPanicf: dPanic", "caller": "main.go:45", "field_fn_key1": "field_fn_value1"}
 github.com/wyy-go/wlog.(*Log).DPanicf
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/logger.go:239
 github.com/wyy-go/wlog.DPanicf
@@ -153,12 +153,12 @@ main.main
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/example/main.go:45
 runtime.main
 	D:/gvm/go/src/runtime/proc.go:250
-2023-02-21 00:15:36.773	project	wlog/logger.go:268	{"msg": "Debugw", "caller": "main.go:47", "field_fn_key1": "field_fn_value1", "Debugw": "w", "11111111": "2222222222"}
-2023-02-21 00:15:36.774	project	wlog/logger.go:277	{"msg": "Infow", "caller": "main.go:48", "field_fn_key1": "field_fn_value1", "Infow": "w"}
-2023-02-21 00:15:36.774	project	wlog/logger.go:286	{"msg": "Warnw", "caller": "main.go:49", "field_fn_key1": "field_fn_value1", "Warnw": "w"}
-2023-02-21 00:15:36.774	project	wlog/logger.go:277	{"msg": "Infow", "caller": "main.go:50", "field_fn_key1": "field_fn_value1", "Infow": "w"}
-2023-02-21 00:15:36.774	project	wlog/logger.go:295	{"msg": "Errorw", "caller": "main.go:51", "field_fn_key1": "field_fn_value1", "Errorw": "w"}
-2023-02-21 00:15:36.774	project	wlog/logger.go:305	{"msg": "DPanicw", "caller": "main.go:52", "field_fn_key1": "field_fn_value1", "DPanicw": "w"}
+2023-02-21 01:11:08.974	debug	project	wlog/logger.go:268	{"msg": "Debugw", "caller": "main.go:47", "field_fn_key1": "field_fn_value1", "Debugw": "w", "11111111": "2222222222"}
+2023-02-21 01:11:08.974	info	project	wlog/logger.go:277	{"msg": "Infow", "caller": "main.go:48", "field_fn_key1": "field_fn_value1", "Infow": "w"}
+2023-02-21 01:11:08.975	warn	project	wlog/logger.go:286	{"msg": "Warnw", "caller": "main.go:49", "field_fn_key1": "field_fn_value1", "Warnw": "w"}
+2023-02-21 01:11:08.975	info	project	wlog/logger.go:277	{"msg": "Infow", "caller": "main.go:50", "field_fn_key1": "field_fn_value1", "Infow": "w"}
+2023-02-21 01:11:08.975	error	project	wlog/logger.go:295	{"msg": "Errorw", "caller": "main.go:51", "field_fn_key1": "field_fn_value1", "Errorw": "w"}
+2023-02-21 01:11:08.975	dpanic	project	wlog/logger.go:305	{"msg": "DPanicw", "caller": "main.go:52", "field_fn_key1": "field_fn_value1", "DPanicw": "w"}
 github.com/wyy-go/wlog.(*Log).DPanicw
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/logger.go:305
 github.com/wyy-go/wlog.DPanicw
@@ -167,7 +167,7 @@ main.main
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/example/main.go:52
 runtime.main
 	D:/gvm/go/src/runtime/proc.go:250
-2023-02-21 00:15:36.775	project	wlog/logger.go:190	{"msg": "Panic", "caller": "main.go:55", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.975	panic	project	wlog/logger.go:190	{"msg": "Panic", "caller": "main.go:55", "field_fn_key1": "field_fn_value1"}
 github.com/wyy-go/wlog.(*Log).Panic
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/logger.go:190
 github.com/wyy-go/wlog.Panic
@@ -180,7 +180,7 @@ main.main
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/example/main.go:54
 runtime.main
 	D:/gvm/go/src/runtime/proc.go:250
-2023-02-21 00:15:36.775	project	wlog/logger.go:247	{"msg": "Panicf: panic", "caller": "main.go:58", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.976	panic	project	wlog/logger.go:247	{"msg": "Panicf: panic", "caller": "main.go:58", "field_fn_key1": "field_fn_value1"}
 github.com/wyy-go/wlog.(*Log).Panicf
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/logger.go:247
 github.com/wyy-go/wlog.Panicf
@@ -193,7 +193,7 @@ main.main
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/example/main.go:57
 runtime.main
 	D:/gvm/go/src/runtime/proc.go:250
-2023-02-21 00:15:36.776	project	wlog/logger.go:314	{"msg": "Panicw: %s", "caller": "main.go:61", "field_fn_key1": "field_fn_value1", "panic": "w"}
+2023-02-21 01:11:08.976	panic	project	wlog/logger.go:314	{"msg": "Panicw: %s", "caller": "main.go:61", "field_fn_key1": "field_fn_value1", "panic": "w"}
 github.com/wyy-go/wlog.(*Log).Panicw
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/logger.go:314
 github.com/wyy-go/wlog.Panicw
@@ -206,10 +206,10 @@ main.main
 	C:/Users/wangyangyang/Desktop/qwqqq/wlog/example/main.go:60
 runtime.main
 	D:/gvm/go/src/runtime/proc.go:250
-2023-02-21 00:15:36.776	project	wlog/logger.go:149	{"aa": "bb", "msg": "debug with", "caller": "main.go:64", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.776	project.another	wlog/logger.go:149	{"msg": "debug named", "caller": "main.go:66", "field_fn_key1": "field_fn_value1"}
-2023-02-21 00:15:36.776	project	wlog/logger.go:149	{"msg": "with context", "caller": "main.go:70", "field_fn_key1": "field_fn_value1", "field_fn_key2": "field_fn_value2"}
-2023-02-21 00:15:36.776	project	wlog/logger.go:149	{"msg": "with field fn", "caller": "main.go:74", "field_fn_key1": "field_fn_value1", "field_fn_key3": "field_fn_value3"}
-2023-02-21 00:15:36.776	project	wlog/logger.go:149	{"aaaa": {"xx": "yy", "bbbbbb": {"dd": "gg", "msg": "", "caller": "main.go:76", "field_fn_key1": "field_fn_value1"}}}
+2023-02-21 01:11:08.977	debug	project	wlog/logger.go:149	{"aa": "bb", "msg": "debug with", "caller": "main.go:64", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.977	debug	project.another	wlog/logger.go:149	{"msg": "debug named", "caller": "main.go:66", "field_fn_key1": "field_fn_value1"}
+2023-02-21 01:11:08.977	debug	project	wlog/logger.go:149	{"msg": "with context", "caller": "main.go:70", "field_fn_key1": "field_fn_value1", "field_fn_key2": "field_fn_value2"}
+2023-02-21 01:11:08.977	debug	project	wlog/logger.go:149	{"msg": "with field fn", "caller": "main.go:74", "field_fn_key1": "field_fn_value1", "field_fn_key3": "field_fn_value3"}
+2023-02-21 01:11:08.977	debug	project	wlog/logger.go:149	{"aaaa": {"xx": "yy", "bbbbbb": {"dd": "gg", "msg": "", "caller": "main.go:76", "field_fn_key1": "field_fn_value1"}}}
 
 ```

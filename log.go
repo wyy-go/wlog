@@ -54,7 +54,7 @@ func toEncoder(c *Config, level zap.AtomicLevel) zapcore.Encoder {
 		EncodeTime:     zapcore.TimeEncoderOfLayout(timeLoyout),
 		EncodeDuration: zapcore.StringDurationEncoder,
 		EncodeCaller:   zapcore.ShortCallerEncoder,
-		//EncodeLevel:    toEncodeLevel(c.EncodeLevel),
+		EncodeLevel:    zapcore.LowercaseLevelEncoder,
 		//MessageKey:     "msg",
 	}
 	//if level.Level() == zap.DebugLevel {
